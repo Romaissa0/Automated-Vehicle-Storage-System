@@ -1,6 +1,7 @@
 # Garage Automation System
-(./screenshot.png)
-
+<a href="./screenshot.png">
+  <img src="./screenshot.png" alt="Photo" width="600">
+</a>
 ## Overview
 
 This project simulates an intelligent garage automation system designed to securely store, manage, and retrieve vehicles with minimal human intervention.
