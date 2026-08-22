@@ -1,4 +1,5 @@
 # Garage Automation System
+(./screenshot.png)
 
 ## Overview
 
