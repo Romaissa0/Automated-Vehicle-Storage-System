@@ -1,9 +1,8 @@
 # Garage Automation System
 
 <img src="./screenshot.png" >
-<a href="./GAS.mp4">
-  <video src="./GAS.mp4" controls width="600"></video>
-</a>
+<video src="./GAS.mp4" controls width="600"></video>
+
 
 ## Overview
 
