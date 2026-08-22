@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GAS — Garage & Asset System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="system-badge">
+      <span class="badge-eyebrow">Live System · Python backend</span>
+      <span class="system-name">G.A.S.</span>
+      <span class="system-sub">Garage &amp; Asset System</span>
+    </div>
+    <nav class="side-nav">
+      <button class="nav-item active" data-view="assets">Assets</button>
+      <button class="nav-item" data-view="garage">Garage Door</button>
+      <button class="nav-item" data-view="requests">Parking Requests</button>
+      <button class="nav-item" data-view="account">Account</button>
+      <button class="nav-item" data-view="alerts">Alerts &amp; Notices</button>
+      <button class="nav-item" data-view="help">Help Desk</button>
+    </nav>
+    <div class="sidebar-footer">Every action here calls your actual <code>gas.py</code> classes through a Flask API — no logic is duplicated in the browser.</div>
+  </aside>
+
+  <main class="main-panel">
+
+    <!-- ASSETS -->
+    <section class="view active" data-view="assets">
+      <div class="view-head"><h2>Assets</h2><span class="view-hint">Assets.add() / Property.presentation()</span></div>
+
+      <div class="form-card">
+        <h3>Add asset</h3>
+        <form id="asset-form">
+          <div class="form-row">
+            <label>Type
+              <select id="asset-type">
+                <option value="residence">Residence</option>
+                <option value="garage">Garage</option>
+                <option value="building">Building</option>
+              </select>
+            </label>
+            <label>ID<input type="text" id="asset-id" placeholder="R2" required /></label>
+          </div>
+          <div class="form-row" id="asset-fields"></div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Add to assets</button>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h3>Add a detail to an existing asset</h3>
+        <form id="detail-form">
+          <div class="form-row">
+            <label>Asset ID<input type="text" id="detail-id" placeholder="R1" required /></label>
+            <label>Detail<input type="text" id="detail-text" placeholder="Newly renovated" required /></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="align-self:flex-start;">Add detail</button>
+        </form>
+      </div>
+
+      <div id="assets-grid" class="card-grid"></div>
+    </section>
+
+    <!-- GARAGE DOOR -->
+    <section class="view" data-view="garage">
+      <div class="view-head"><h2>Garage Door</h2><span class="view-hint">Controller.remote_control()</span></div>
+      <div id="garage-panels"></div>
+      <div class="form-card">
+        <h3>Park a car</h3>
+        <form id="car-form">
+          <div class="form-row">
+            <label>Garage<select id="car-garage"></select></label>
+            <label>Car ID<input type="text" id="car-id" placeholder="Car3" required /></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="align-self:flex-start;">Add car</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- PARKING REQUESTS -->
+    <section class="view" data-view="requests">
+      <div class="view-head"><h2>Parking Requests</h2><span class="view-hint">Request.create_request()</span></div>
+      <div class="form-card">
+        <h3>File a request</h3>
+        <form id="request-form">
+          <div class="form-row">
+            <label>Car ID<input type="text" id="req-car" placeholder="Car9" required /></label>
+            <label>Level<input type="number" id="req-level" min="1" max="19" value="1" required /></label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Submit request</button>
+        </form>
+      </div>
+      <div id="levels-grid" class="levels-grid"></div>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section class="view" data-view="account">
+      <div class="view-head"><h2>Account</h2><span class="view-hint">Login.login() / Edit.edit_details()</span></div>
+
+      <div class="form-card">
+        <h3>Session <span id="login-pill" class="status-pill off">Signed out</span></h3>
+        <form id="login-form">
+          <div class="form-row">
+            <label>Name<input type="text" id="acc-name" value="Alice" required /></label>
+            <label>Email<input type="email" id="acc-email" value="alice@example.com" required /></label>
+          </div>
+          <div class="form-row">
+            <label>Phone<input type="tel" id="acc-phone" value="123456789" /></label>
+            <label>House ID<input type="text" id="acc-house" value="R1" /></label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Log in</button>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h3>Edit details</h3>
+        <form id="edit-form">
+          <div class="form-row">
+            <label>New name<input type="text" id="edit-name" placeholder="leave blank to keep" /></label>
+            <label>New phone<input type="tel" id="edit-phone" placeholder="leave blank to keep" /></label>
+            <label>New email<input type="email" id="edit-email" placeholder="leave blank to keep" /></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="align-self:flex-start;">Save changes</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ALERTS / NOTIFICATIONS -->
+    <section class="view" data-view="alerts">
+      <div class="view-head"><h2>Alerts &amp; Notices</h2><span class="view-hint">Alert.alert() / Notify.send_notification() / Verify.verify_alert()</span></div>
+
+      <div class="form-card">
+        <h3>Send a notification</h3>
+        <form id="notify-form">
+          <div class="form-row">
+            <label>Car ID<input type="text" id="notify-car" placeholder="Car1" required /></label>
+            <label>Garage ID<input type="text" id="notify-garage" placeholder="G1" required /></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="align-self:flex-start;">Send notification</button>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h3>Raise &amp; verify an alert</h3>
+        <form id="alert-form">
+          <div class="form-row">
+            <label>Problem description<input type="text" id="alert-problem" placeholder="Garage is FULL" required /></label>
+          </div>
+          <button type="submit" class="btn btn-secondary" style="align-self:flex-start;">Raise + verify alert</button>
+        </form>
+      </div>
+
+      <div id="alerts-feed" class="feed"></div>
+    </section>
+
+    <!-- HELP DESK -->
+    <section class="view" data-view="help">
+      <div class="view-head"><h2>Help Desk</h2><span class="view-hint">Help.provide_help()</span></div>
+      <div class="form-card">
+        <h3>File a help record</h3>
+        <form id="help-form">
+          <div class="form-row">
+            <label>Car ID<input type="text" id="help-car" placeholder="Car2" required /></label>
+            <label>Payment state<select id="help-payment">
+              <option>Paid</option><option>Overdue</option><option>Pending</option>
+            </select></label>
+          </div>
+          <div class="form-row">
+            <label>Car state<select id="help-carstate">
+              <option>Good</option><option>Needs service</option><option>Damaged</option>
+            </select></label>
+            <label>Rental value<input type="text" id="help-rental" placeholder="$500/month" required /></label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Provide help</button>
+        </form>
+      </div>
+      <div id="help-list"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
