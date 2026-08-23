@@ -16,7 +16,7 @@ The project focuses on applying **Object-Oriented Programming (OOP)** principles
 
 <p align="center">
   <a href="./GAS1.mp4">
-    <img src="./screenshot.png" alt="Watch Garage Automation System Demo" width="700">
+    <img src="./Screenshot.png" alt="Watch Garage Automation System Demo" width="700">
   </a>
 </p>
 
