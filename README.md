@@ -2,7 +2,7 @@
 
 <img src="./screenshot.png" >
 <video src="./GAS1.mp4" controls width="600"></video>
-
+[![Garage Automation System](./screenshot.png)](./GAS1.mp4)
 
 ## Overview
 
