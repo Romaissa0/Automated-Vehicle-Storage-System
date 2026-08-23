@@ -1,7 +1,7 @@
 # Garage Automation System
 
 <p align="center">
-  <img src="./screenshot.png" alt="Garage Automation System" width="800">
+  <img src="./Screenshot.png" alt="Garage Automation System" width="800">
 </p>
 
 ## Overview
