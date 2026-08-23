@@ -1,100 +1,67 @@
 # Garage Automation System
-```html
-<img src="./screenshot.png" >
-<video src="./GAS1.mp4" controls width="600"></video>
-[![Garage Automation System](./screenshot.png)](./GAS1.mp4)
+
+<p align="center">
+  <img src="./screenshot.png" alt="Garage Automation System" width="800">
+</p>
 
 ## Overview
 
-This project simulates an intelligent garage automation system designed to securely store, manage, and retrieve vehicles with minimal human intervention.
+The **Garage Automation System (GAS)** is a Python-based project that simulates an intelligent garage designed to securely store, manage, and retrieve vehicles with minimal human intervention.
 
-The system models a smart residential garage where vehicles are linked to their owners, automatically identified, and retrieved upon request. It emphasizes object-oriented software design by applying core OOP concepts to solve a real-world automation problem.
+The system models a smart residential garage where vehicles are linked to their owners, automatically identified, and retrieved upon request.
 
----
+The project focuses on applying **Object-Oriented Programming (OOP)** principles to a practical real-world automation problem.
 
-## Objectives
+## 🎥 Demo
 
-- Simulate an automated vehicle storage system
-- Manage vehicle-owner relationships
-- Automate vehicle retrieval
-- Improve storage efficiency
-- Apply Object-Oriented Programming principles
-- Build a scalable software architecture
+<p align="center">
+  <a href="./GAS1.mp4">
+    <img src="./screenshot.png" alt="Watch Garage Automation System Demo" width="700">
+  </a>
+</p>
 
----
+<p align="center">
+  <i>Click the image above to watch the demonstration.</i>
+</p>
 
 ## Features
 
-- Vehicle registration
-- Owner management
-- Automated vehicle retrieval
-- User identification
-- Multiple vehicle support
-- Estimated retrieval time
-- Hierarchical data organization
-- Extensible system architecture
-
----
+- 🚗 Vehicle management
+- 👤 Owner and vehicle association
+- 🏠 Garage and property management
+- 🔐 Vehicle identification
+- 📥 Vehicle storage and retrieval
+- 🔎 Vehicle search
+- ✅ Data validation
+- 🧩 Object-oriented architecture
 
 ## Object-Oriented Concepts
 
-This project demonstrates:
-
+- Classes and Objects
+- Encapsulation
 - Inheritance
 - Polymorphism
 - Abstraction
-- Abstract Classes
 - Composition
-- Constructors & Destructors
-- Class Relationships
-
----
+- Type validation
 
 ## Technologies
 
 - Python
-- Object-Oriented Programming (OOP)
-
----
-
-## System Design
-
-The system models several interacting entities such as:
-
-- Users
-- Residents
-- Visitors
-- Vehicles
-- Garage
-- Storage Assets
-- Management System
-
-Each component has clearly defined responsibilities to ensure modularity and maintainability.
-
----
-
-## Skills Demonstrated
-
-- Python Programming
 - Object-Oriented Programming
-- System Modeling
-- Class Design
-- Inheritance
-- Polymorphism
-- Abstraction
-- Composition
-- Problem Solving
-
----
+- Git & GitHub
 
 ## Future Improvements
 
-- Database integration
-- Authentication and authorization
-- GUI application
-- REST API
-- Real-time garage monitoring
-- IoT sensor integration
-- Mobile application
-- Parking reservation system
-- Vehicle maintenance tracking
+- 🖥️ Graphical User Interface (GUI)
+- 🗄️ Database integration
+- 🔐 User authentication
+- 📊 Garage statistics and reports
+- 💾 Persistent data storage
+- 🤖 Additional automation features
+
+## Author
+
+**Romaissa**
+
+Mathematics Student | Python | OOP | Data & Security
